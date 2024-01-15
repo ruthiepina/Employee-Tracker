@@ -12,15 +12,15 @@ console.table package was included to print MySQL rows to the console.
 
 ## Table of Contents
 
--[User Story](#user-story)
--[Acceptance Criteria](#acceptance-criteria) 
--[Installation](#installation) 
--[Usage](#usage) 
--[Example](#example) 
--[Deliverables](#deliverables) 
--[License](#license) 
--[Credits](#credits) 
--[Questions](#questions)
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria) 
+- [Installation](#installation) 
+- [Usage](#usage) 
+- [Example](#example) 
+- [Deliverables](#deliverables) 
+- [License](#license) 
+- [Credits](#credits) 
+- [Questions](#questions)
 
 ## User Story
 
@@ -73,12 +73,14 @@ THEN I am prompted to select an employee to update and their new role and this i
 
 ## Deliverables
 
-[Employee-Tracker Repository](https://github.com/ruthiepina/Employee-Tracker)
-[Walkthrough Video]()
+- [Employee-Tracker Repository](https://github.com/ruthiepina/Employee-Tracker)
+- [Walkthrough Video]()
 
 ## License
 
-Copyright (c) 2024 Ruthie Pina. All rights reserved. Licensed under the [MIT License](https://choosealicense.com/licenses/mit).
+Copyright (c) 2024 Ruthie Pina. All rights reserved.
+
+Licensed under the [MIT License](https://choosealicense.com/licenses/mit).
 
 ## Credits
 
