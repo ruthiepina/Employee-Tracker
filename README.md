@@ -12,7 +12,15 @@ console.table package was included to print MySQL rows to the console.
 
 ## Table of Contents
 
--[User Story](#user-story) -[Acceptance Criteria](#acceptance-criteria) -[Installation](#installation) -[Usage](#usage) -[Example](#example) -[Deployment](#deployment) -[License](#license) -[Credits](#credits) -[Questions](#questions)
+-[User Story](#user-story)
+-[Acceptance Criteria](#acceptance-criteria) 
+-[Installation](#installation) 
+-[Usage](#usage) 
+-[Example](#example) 
+-[Deliverables](#deliverables) 
+-[License](#license) 
+-[Credits](#credits) 
+-[Questions](#questions)
 
 ## User Story
 
@@ -46,17 +54,36 @@ THEN I am prompted to select an employee to update and their new role and this i
 
 ## Installation
 
+- install node.js
+- install MySQL2 package
+- install Inquirer package
+- install console.table package
+
 ## Usage
+
+- connect to MySQL
+- create database
+- create db tables
+- seed db tables
+- run app w node index.js
+- follow/answer inquirer prompts
+- exit app
 
 ## Example
 
-## Deployment
+## Deliverables
+
+[Employee-Tracker Repository](https://github.com/ruthiepina/Employee-Tracker)
+[Walkthrough Video]()
 
 ## License
 
 Copyright (c) 2024 Ruthie Pina. All rights reserved. Licensed under the [MIT License](https://choosealicense.com/licenses/mit).
 
 ## Credits
+
+- https://git.bootcampcontent.com/University-of-Utah/UofU-VIRT-FSF-PT-10-2023-U-LOLC/-/tree/main/12-SQL
+
 
 ## Questions
 
