@@ -82,6 +82,7 @@ Copyright (c) 2024 Ruthie Pina. All rights reserved.
 
 Licensed under the [MIT License](https://choosealicense.com/licenses/mit).
 
+
 ## Credits
 
 - https://git.bootcampcontent.com/University-of-Utah/UofU-VIRT-FSF-PT-10-2023-U-LOLC/-/tree/main/12-SQL
