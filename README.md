@@ -73,8 +73,9 @@ THEN I am prompted to select an employee to update and their new role and this i
 
 ## Deliverables
 
-- [Employee-Tracker Repository](https://github.com/ruthiepina/Employee-Tracker)
-- [Walkthrough Video]()
+[Employee-Tracker Repository](https://github.com/ruthiepina/Employee-Tracker)
+
+[Walkthrough Video]()
 
 ## License
 
