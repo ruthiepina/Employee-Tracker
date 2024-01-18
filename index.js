@@ -1,19 +1,44 @@
 const inquirer = require("inquirer");
-const { initialOptions } = require("./utils/appPrompts");
+const { appPrompts } = require("./utils/appPrompts");
 
 // async function selectOption() {
 //    return await inquirer.prompt(initialOptions);
 // }
 
 const selectOption = async () => {
-   const answers = await inquirer.prompt(initialOptions);
-   console.log(answers);
-   return answers.option !== "exit application" ? selectOption() : 0;
+   const answers = await inquirer.prompt(appPrompts);
+   switch (answers.nextOption) {
+      case "view all departments":
+         console.log(`answers.nextOption`, answers.nextOption);
+         break;
+      case "view all roles":
+         console.log(`answers.nextOption`, answers.nextOption);
+         break;
+      case "view all employees":
+         console.log(`answers.nextOption`, answers.nextOption);
+         break;
+      case "add a department":
+         console.log(`answers.nextOption`, answers.nextOption);
+         break;
+      case "add a role":
+         console.log(`answers.nextOption`, answers.nextOption);
+         break;
+      case "add an employee":
+         console.log(`answers.nextOption`, answers.nextOption);
+         break;
+      case "update an employee role":
+         console.log(`answers.nextOption`, answers.nextOption);
+         break;
+      case "exit application":
+         console.log(`answers.nextOption`, answers.nextOption);
+         break;
+   }
+   return answers.nextOption !== "exit application" ? selectOption() : answers.nextOption;
 };
 
 const initApp = async () => {
-   let option = await selectOption();
-   console.log("***option", option);
+    let nextOption = await selectOption();
+    
    return;
 };
 
