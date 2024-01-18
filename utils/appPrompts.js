@@ -2,7 +2,7 @@
 const initialOptions = [
    {
       type: "list",
-      name: "initialOption",
+      name: "option",
       message: "Please select what you want to do.",
       choices: [
          "view all departments",
