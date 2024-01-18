@@ -1,5 +1,8 @@
 const inquirer = require("inquirer");
-const { appPrompts } = require("./utils/appPrompts");
+const { appPrompts } = require("./utils/appPrompts.js");
+const Department = require("./lib/Department.js");
+const Employee = require("./lib/Employee.js");
+const Role = require("./lib/Role.js");
 
 // async function selectOption() {
 //    return await inquirer.prompt(initialOptions);
@@ -37,8 +40,8 @@ const selectOption = async () => {
 };
 
 const initApp = async () => {
-    let nextOption = await selectOption();
-    
+   let nextOption = await selectOption();
+
    return;
 };
 
