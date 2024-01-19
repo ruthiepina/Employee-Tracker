@@ -88,6 +88,10 @@ Licensed under the [MIT License](https://choosealicense.com/licenses/mit).
 
 - https://git.bootcampcontent.com/University-of-Utah/UofU-VIRT-FSF-PT-10-2023-U-LOLC/-/tree/main/12-SQL
 
+- https://www.sqlshack.com/understanding-sql-decimal-data-type/
+
+
+- https://www.w3schools.com/sql/sql_autoincrement.asp
 
 ## Questions
 
