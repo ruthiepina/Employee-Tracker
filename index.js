@@ -14,6 +14,8 @@ const selectOption = async () => {
    let selectedName = ``;
    let role_id = 0;
    let manager_id = 0;
+   let employee_id = 0;
+   // let department_id = 0;
 
    switch (answers.nextOption) {
       case "View all departments":
@@ -56,11 +58,20 @@ VALUES ('${answers.roleTitle}', '${role_id + 1}', '${answers.roleSalary}');`; //
          }
          break;
       case "Update an employee role":
+         displayListsArray = Role_Index;
+         selectedName = updateEmployeeName;
+         employee_id = lists[Manager_Index].indexOf(selectedName);
+         selectedName = answers.updateRoleName;
+         role_id = lists[displayListsArray].indexOf(selectedName) + 1;
+         sql = `UPDATE employees SET role_id = ${role_id} WHERE id = ${employee_id};`;
          break;
       case "Exit application":
          db.end();
          return;
          break;
+      
+      
+      
    }
    db.query(sql, (err, rows) => {
       if (selectedName) {
