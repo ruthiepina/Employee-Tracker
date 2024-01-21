@@ -1,6 +1,10 @@
-//* Create Inquirer Prompts for Initial Menu Options
-//* Inquirer prompts for add department, add role, add employee
+const Dept_Index = 0; //* Indexes of array of dept options, roles options, managers options
+const Role_Index = 1;
+const Manager_Index = 2;
 
+const lists = [[], [], ["none"]]; //* displayed options list array, in array
+
+//* Create Inquirer Prompts for Initial Menu Options
 const appPrompts = [
    {
       type: "list",
@@ -46,9 +50,10 @@ const appPrompts = [
    },
    {
       when: (answers) => answers.nextOption === "add a role",
-      type: "number",
-      name: "roleDepartmentId",
-      message: "Enter the department id for the role, cannot be empty: ",
+      type: "list",
+      name: "roleDepartmentName",
+      message: "Choose the department that this role belongs to, cannot be empty: ",
+      choices: lists[Dept_Index],
       validate: (notEmpty) => {
          if (notEmpty) {
             return true;
@@ -98,9 +103,10 @@ const appPrompts = [
    },
    {
       when: (answers) => answers.nextOption === "add an employee",
-      type: "number",
-      name: "employeeRoleId",
-      message: "Enter the employee's role id, cannot be empty: ",
+      type: "list",
+      name: "employeeRoleName",
+      message: "Choose the employee's role, cannot be empty: ",
+      choices: lists[Role_Index],
       validate: (notEmpty) => {
          if (notEmpty) {
             return true;
@@ -124,9 +130,10 @@ const appPrompts = [
    },
    {
       when: (answers) => answers.nextOption === "add an employee",
-      type: "number",
-      name: "employeeManagerId",
-      message: "Enter the employee's manager id, cannot be empty: ",
+      type: "list",
+      name: "employeeManager",
+      message: "Choose the employee's manager, cannot be empty: ",
+      choices: lists[Manager_Index],
       validate: (notEmpty) => {
          if (notEmpty) {
             return true;
@@ -137,4 +144,4 @@ const appPrompts = [
    },
 ];
 
-module.exports = { appPrompts };
+module.exports = { appPrompts, Dept_Index, Role_Index, Manager_Index, lists };
