@@ -6,7 +6,6 @@ const Role = require("./lib/Role.js");
 const db = require("./db/connection.js");
 const cTable = require("console.table");
 
-
 const selectOption = async () => {
    const answers = await inquirer.prompt(appPrompts);
 
@@ -17,22 +16,22 @@ const selectOption = async () => {
    let manager_id = 0;
 
    switch (answers.nextOption) {
-      case "view all departments":
+      case "View all departments":
          sql = `SELECT * FROM departments;`;
          break;
-      case "view all roles":
+      case "View all roles":
          sql = `SELECT * FROM roles;`;
          break;
-      case "view all employees":
+      case "View all employees":
          sql = `SELECT * FROM employees;`;
          break;
-      case "add a department":
+      case "Add a department":
          displayListsArray = Dept_Index;
          selectedName = answers.departmentName;
          sql = `INSERT INTO departments (name)
 VALUES ('${answers.departmentName}');`;
          break;
-      case "add a role":
+      case "Add a role":
          displayListsArray = Role_Index;
          selectedName = answers.roleDepartmentName;
          role_id = lists[Role_Index].indexOf(selectedName);
@@ -40,7 +39,7 @@ VALUES ('${answers.departmentName}');`;
          sql = `INSERT INTO roles (title, department_id, salary)
 VALUES ('${answers.roleTitle}', '${role_id + 1}', '${answers.roleSalary}');`; //* You do + 1 to convert array i to table id
          break;
-      case "add an employee":
+      case "Add an employee":
          const NULL_Condition = 1;
          displayListsArray = Manager_Index;
          selectedName = answers.employeeRoleName;
@@ -56,9 +55,9 @@ VALUES ('${answers.roleTitle}', '${role_id + 1}', '${answers.roleSalary}');`; //
             VALUES ('${answers.employeeFirstName}', '${answers.employeeLastName}', '${role_id}', '${answers.employeeSalary}', '${manager_id}');`;
          }
          break;
-      case "update an employee role":
+      case "Update an employee role":
          break;
-      case "exit application":
+      case "Exit application":
          db.end();
          return;
          break;
