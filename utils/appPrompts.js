@@ -52,15 +52,8 @@ const appPrompts = [
       when: (answers) => answers.nextOption === "Add a role",
       type: "list",
       name: "roleDepartmentName",
-      message: "Select the department that this role belongs to, cannot be empty: ",
+      message: "Select the department that this role reports to, cannot be empty: ",
       choices: lists[Dept_Index],
-      validate: (notEmpty) => {
-         if (notEmpty) {
-            return true;
-         } else {
-            return false;
-         }
-      },
    },
    {
       when: (answers) => answers.nextOption === "Add a role",
@@ -107,13 +100,6 @@ const appPrompts = [
       name: "employeeRoleName",
       message: "Select the employee's role, cannot be empty: ",
       choices: lists[Role_Index],
-      validate: (notEmpty) => {
-         if (notEmpty) {
-            return true;
-         } else {
-            return false;
-         }
-      },
    },
    {
       when: (answers) => answers.nextOption === "Add an employee",
@@ -134,13 +120,20 @@ const appPrompts = [
       name: "employeeManager",
       message: "Select the employee's manager, cannot be empty: ",
       choices: lists[Manager_Index],
-      validate: (notEmpty) => {
-         if (notEmpty) {
-            return true;
-         } else {
-            return false;
-         }
-      },
+   },
+   {
+      when: (answers) => answers.nextOption === "Update an employee role",
+      type: "list",
+      name: "updateEmployeeName",
+      message: "Select the employee you wish to update: ",
+      choices: lists[Manager_Index],
+   },
+   {
+      when: (answers) => answers.nextOption === "Update an employee role",
+      type: "list",
+      name: "updateRoleName",
+      message: "Select the employee's updated role: ",
+      choices: lists[Role_Index],
    },
 ];
 
