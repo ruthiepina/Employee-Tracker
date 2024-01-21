@@ -3,6 +3,8 @@ const { appPrompts } = require("./utils/appPrompts.js");
 const Department = require("./lib/Department.js");
 const Employee = require("./lib/Employee.js");
 const Role = require("./lib/Role.js");
+const db = require("./db/connection.js");
+const cTable = require("console.table");
 
 // async function selectOption() {
 //    return await inquirer.prompt(initialOptions);
@@ -10,15 +12,16 @@ const Role = require("./lib/Role.js");
 
 const selectOption = async () => {
    const answers = await inquirer.prompt(appPrompts);
+   let sql = ``;
    switch (answers.nextOption) {
       case "view all departments":
-         console.log(`answers.nextOption`, answers.nextOption);
+         sql = `SELECT * FROM departments`;
          break;
       case "view all roles":
-         console.log(`answers.nextOption`, answers.nextOption);
+         sql = `SELECT * FROM roles`;
          break;
       case "view all employees":
-         console.log(`answers.nextOption`, answers.nextOption);
+         sql = `SELECT * FROM employees`;
          break;
       case "add a department":
          console.log(`answers.nextOption`, answers.nextOption);
@@ -33,16 +36,25 @@ const selectOption = async () => {
          console.log(`answers.nextOption`, answers.nextOption);
          break;
       case "exit application":
-         console.log(`answers.nextOption`, answers.nextOption);
+         db.end();
+         return;
          break;
    }
-   return answers.nextOption !== "exit application" ? selectOption() : answers.nextOption;
+   db.query(sql, (err, rows) => {
+      if (err) throw err;
+      console.log(`\n ${answers.nextOption}\n`);
+      console.table(rows);
+      selectOption();
+   });
+   //return answers.nextOption !== "exit application" ? selectOption() : answers.nextOption;
 };
 
 const initApp = async () => {
    let nextOption = await selectOption();
-
-   return;
+   db.connect((err) => {
+      if (err) throw err;
+      selectOption();
+   });
 };
 
 initApp();
