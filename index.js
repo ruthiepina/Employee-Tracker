@@ -15,25 +15,27 @@ const selectOption = async () => {
    let sql = ``;
    switch (answers.nextOption) {
       case "view all departments":
-         sql = `SELECT * FROM departments`;
+         sql = `SELECT * FROM departments;`;
          break;
       case "view all roles":
-         sql = `SELECT * FROM roles`;
+         sql = `SELECT * FROM roles;`;
          break;
       case "view all employees":
-         sql = `SELECT * FROM employees`;
+         sql = `SELECT * FROM employees;`;
          break;
       case "add a department":
-         console.log(`answers.nextOption`, answers.nextOption);
+         sql = `INSERT INTO departments (name)
+VALUES ('${answers.departmentName}');`;
          break;
       case "add a role":
-         console.log(`answers.nextOption`, answers.nextOption);
+         sql = `INSERT INTO roles (title, department_id, salary)
+VALUES ('${answers.roleTitle}', '${answers.roleDepartmentId}', '${answers.roleSalary}');`;
          break;
       case "add an employee":
-         console.log(`answers.nextOption`, answers.nextOption);
+         sql = `INSERT INTO employees (first_name, last_name, role_id, salary, manager_id)
+VALUES ('${answers.employeeFirstName}', '${answers.employeeLastName}', '${answers.employeeRoleId}', '${answers.employeeSalary}', '${answers.employeeManagerId}')`;
          break;
       case "update an employee role":
-         console.log(`answers.nextOption`, answers.nextOption);
          break;
       case "exit application":
          db.end();
