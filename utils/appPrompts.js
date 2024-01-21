@@ -1,8 +1,8 @@
 //* Create Inquirer Prompts for Initial Menu Options
-const initialOptions = [
+const appPrompts = [
    {
       type: "list",
-      name: "option",
+      name: "nextOption",
       message: "Please select what you want to do.",
       choices: [
          "view all departments",
@@ -14,8 +14,8 @@ const initialOptions = [
          "update an employee role",
          "exit application",
       ],
-      loop: true,
+      loop: false,
    },
 ];
 
-module.exports = { initialOptions };
+module.exports = { appPrompts };
