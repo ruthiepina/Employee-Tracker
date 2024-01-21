@@ -1,5 +1,10 @@
 //* Create Inquirer Prompts for Initial Menu Options
-const appPrompts = [
+
+// TODO where do the prompts for the bonuses get added to? is it a "choice" within a "choice"??
+
+// TODO create another const for departmentPrompts, employeePrompts, etc.
+
+const appPrompts = [ //*Call it initialPrompts
    {
       type: "list",
       name: "nextOption",
