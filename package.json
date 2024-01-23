@@ -1,0 +1,16 @@
+{
+   "dependencies": {
+      "console.table": "^0.10.0",
+      "inquirer": "^8.2.6",
+      "mysql2": "^3.7.1"
+   },
+   "name": "employee-tracker",
+   "description": "![License Badge](./assets/badge.svg)",
+   "version": "1.0.0",
+   "main": "index.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "author": "Ruthie Pina",
+   "license": "MIT"
+}
