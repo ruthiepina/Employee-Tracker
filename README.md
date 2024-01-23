@@ -54,28 +54,46 @@ THEN I am prompted to select an employee to update and their new role and this i
 
 ## Installation
 
-- install node.js
-- install MySQL2 package
-- install Inquirer package
-- install console.table package
+Once you have created an Employee-Tracker repository on GitHub and have cloned it to your local repository, continue with the following installation instructions.
+
+1. Install node.js by following the [node.js](https://nodejs.org/en/) instructions.
+
+2. Install the npm Inquirer package ("npm i inquirer").
+
+3. Install the npm MySQL2 package ("npm i mysql2").
+
+4. Install the npm console.table package ("npm install console.table --save").
+
+5. Update .gitignore file as needed!
 
 ## Usage
 
-- connect to MySQL
-- create database
-- create db tables
-- seed db tables
-- run app w node index.js
-- follow/answer inquirer prompts
-- exit app
+Once you have completed the installation for the Employee-Tracker application, continue with the following usage instructions.
+
+1. Connect to the MySQL server, done so by opening a terminal and entering: 'mysql -u root -p'
+    - Add the user info and connect to the server.
+
+2. Create the database by entering: 'source db/db.sql;'
+
+3. Create the database tables by entering: 'source db/schema.sql;'
+
+4. Seed the database tables by entering: 'source db/seeds.sql;'
+
+5. Initiate/run the application by entering: 'node index.js'
+
+6. Prompts for actions to go through and add to the database will be presented through the terminal, once you're done with that then select 'Exit the application' from the prompts.
 
 ## Example
+
+### Generated Command Line Output
+
+![SQL Tables](./assets/images/sql-tables.PNG)
 
 ## Deliverables
 
 [Employee-Tracker Repository](https://github.com/ruthiepina/Employee-Tracker)
 
-[Walkthrough Video]()
+[Walkthrough Video](https://drive.google.com/file/d/1uoQL21RHSlRoRErJBM5GvIDdufrQOadH/view)
 
 ## License
 
@@ -83,15 +101,15 @@ Copyright (c) 2024 Ruthie Pina. All rights reserved.
 
 Licensed under the [MIT License](https://choosealicense.com/licenses/mit).
 
-
 ## Credits
 
 - https://git.bootcampcontent.com/University-of-Utah/UofU-VIRT-FSF-PT-10-2023-U-LOLC/-/tree/main/12-SQL
 
-- https://www.sqlshack.com/understanding-sql-decimal-data-type/
+- https://www.sqlshack.com/
 
+- https://www.w3schools.com/sql/default.asp
 
-- https://www.w3schools.com/sql/sql_autoincrement.asp
+- https://dev.mysql.com/doc/
 
 ## Questions
 

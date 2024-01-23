@@ -1,18 +1,22 @@
-const inquirer = require("inquirer");
+const inquirer = require("inquirer"); //* Gets npm inquirer package
+//*Arrays and indexs for inquirer data/display
 const { appPrompts, Dept_Index, Role_Index, Manager_Index, lists } = require("./utils/appPrompts");
-const db = require("./db/connection");
-const cTable = require("console.table");
+const db = require("./db/connection"); //* Gets mySQL connection
+const cTable = require("console.table"); //* Gets npm package console.table, displays SQL data in terminal
 
+//* Process inquirer prompts and MySQL commands
 const selectOption = async () => {
    const answers = await inquirer.prompt(appPrompts);
 
-   let sql = ``;
-   let displayListsArray = 0;
+   let sql = ``; //* sql command
+   let displayListsArray = 0; //* Index to see if processing dept, role, or manager
    let role_id = 0;
    let manager_id = 0;
    let employee_id = 0;
    let department_id = 0;
 
+   //* Actions determined by menu selection
+   //* All cases build sql command depending on option and executes with executeQuery()
    switch (answers.nextOption) {
       case "View all departments":
          sql = `SELECT id, name AS department FROM departments;`;
@@ -60,12 +64,14 @@ VALUES ('${answers.roleTitle}', '${department_id}', '${answers.roleSalary}');`;
          executeQuery(sql, "", 0, answers.nextOption);
          break;
       case "Exit application":
-         db.end();
+         db.end(); //* Ends database connection
          return;
          break;
    }
 };
 
+//* Populates arrays used by prompt choices arrays w seeded data
+//* Then updated with push when adding new dept, new role, new employee
 const dbDataToArray = async () => {
    sql = `SELECT name FROM departments;`;
    db.query(sql, (err, rows) => {
@@ -90,29 +96,33 @@ const dbDataToArray = async () => {
    });
 };
 
+//* sql command, name to push into lists[displayListsArray], index of sub arrays, title of the selection/action from prompts
 function executeQuery(sql, selectedName, displayListsArray, heading) {
    db.query(sql, (err, rows) => {
       if (err) throw err;
       if (selectedName) {
+         //* Adds new dept, role, or employee to inquirer arrays
          lists[displayListsArray].push(selectedName);
          console.log(`'${heading}' request processed`);
       } else {
          console.log(`\n ${heading}\n`);
          console.table(rows);
       }
-      selectOption();
+      selectOption(); //* recursive call to continue until exiting app
    });
 }
 
+//* Main function
 const initApp = async () => {
    console.log(`
 *******************************************************************************
-*             W E L C O M E   T O   E m p l o y e e - T r a c k e r           *
+*             W e l c o m e   T o   E m p l o y e e - T r a c k e r           *
 *******************************************************************************`);
    db.connect((err) => {
-      if (err) throw err;
-      dbDataToArray();
-      selectOption();
+      //* Connecting to database
+      if (err) throw err; //* Can't connect to database
+      dbDataToArray(); //* Populates inquirer 'choices' arrays with data from database
+      selectOption(); //* Runs inquirer
    });
 };
 
