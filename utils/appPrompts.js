@@ -103,7 +103,7 @@ const appPrompts = [
    },
    {
       when: (answers) => answers.nextOption === "Add an employee",
-      type: "salary",
+      type: "input",
       name: "employeeSalary",
       message: "Enter the employee's salary, cannot be empty: ",
       validate: (notEmpty) => {
