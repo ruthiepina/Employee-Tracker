@@ -1,3 +1,5 @@
+/* Seeds the databases tables from schema.sql */
+
 INSERT INTO departments (name)
 VALUES ('Sales'), ('Engineering'), ('Finance'), ('Legal');
 
